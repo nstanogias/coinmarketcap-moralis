@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { MoralisProvider } from 'react-moralis'
+import CoinMarketProvider from '../context/context'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       serverUrl={process.env.NEXT_PUBLIC_SERVER_URL!}
       appId={process.env.NEXT_PUBLIC_APPLICATION_ID!}
     >
-      <Component {...pageProps} />
+      <CoinMarketProvider>
+        <Component {...pageProps} />
+      </CoinMarketProvider>
     </MoralisProvider>
   )
 }
