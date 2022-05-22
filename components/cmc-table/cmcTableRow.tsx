@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import More from '../../assets/svg/more'
 import Star from '../../assets/svg/star'
-import CoinNameRow from '../coinNameRow'
+import CoinNameRow from './coinNameRow'
 import Rate from './rate'
 import { useRouter } from 'next/router'
 
@@ -70,9 +70,13 @@ const CMCtableRow = ({
         </td>
         <td>{starNum}</td>
 
-        {coinIcon && coinIcon ? (
+        {coinIcon ? (
           <td className="cursor-pointer">
-            <CoinNameRow name={coinName} icon={coinIcon} />
+            <CoinNameRow
+              name={coinName}
+              icon={coinIcon}
+              clicked={viewCoinDetails}
+            />
           </td>
         ) : (
           <></>

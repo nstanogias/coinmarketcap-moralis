@@ -15,7 +15,6 @@ const CMCtable = () => {
   const setData = useCallback(async () => {
     try {
       let apiResponse = await getTopTenCoins()
-      console.log(apiResponse)
       let filteredResponse: any[] = []
 
       for (let i = 0; i < apiResponse.length; i++) {

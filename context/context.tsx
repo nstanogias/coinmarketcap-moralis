@@ -15,7 +15,6 @@ const CoinMarketProvider = ({ children }) => {
   const getTopTenCoins = async () => {
     try {
       const res = await fetch('/api/getTopTen')
-      console.log(res)
       const data = await res.json()
       return data.data.data
     } catch (e) {
