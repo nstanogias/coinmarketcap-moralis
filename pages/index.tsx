@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Header from '../components/header'
 import Trending from '../components/trending'
-import CMCtable from '../components/cmc-table/cmcTable'
+import CMCtable from '../components/cmc-table/CmcTable'
 
 const Home: NextPage = () => {
   return (

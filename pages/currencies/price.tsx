@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import CoinDetails from '../../components/coinDetails'
+import CoinDetails from '../../components/CoinDetails'
 import Header from '../../components/header'
 
 const Price = () => {
