@@ -1,8 +1,8 @@
 import ChevronDown from '../assets/svg/chevronDown'
 import { useState, useContext, useEffect } from 'react'
 import ChevronUp from '../assets/svg/chevronUp'
-import ChatCard from './chatCard'
-import Button from './button'
+import ChatCard from './ChatCard'
+import Button from './Button'
 import shiba from '../assets/shiba.png'
 import Image from 'next/image'
 

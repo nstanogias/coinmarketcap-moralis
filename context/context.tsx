@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createContext, useState, useEffect } from 'react'
 import { useMoralis } from 'react-moralis'
 
@@ -15,10 +16,34 @@ import {
 
 type contextType = {
   getTopTenCoins: () => any
+  openBuyCryptoModal: boolean
+  setOpenBuyCryptoModal: (val: boolean) => void
+  fromToken: string
+  toToken: string
+  setFromToken: (val: string) => void
+  setToToken: (val: string) => void
+  amount: number
+  setAmount: (amount: number) => void
+  mint: () => void
+  coins: any
+  loadingCoins: boolean
+  openModal: () => void
 }
 
 const contextDefaultValues: contextType = {
   getTopTenCoins: () => {},
+  openBuyCryptoModal: false,
+  setOpenBuyCryptoModal: (val: boolean) => {},
+  fromToken: '',
+  toToken: '',
+  setFromToken: (val: string) => {},
+  setToToken: (val: string) => {},
+  amount: 0,
+  setAmount: (amount: number) => {},
+  mint: () => {},
+  coins: {},
+  loadingCoins: false,
+  openModal: () => {},
 }
 
 export const CoinMarketContext =
@@ -35,7 +60,7 @@ const CoinMarketProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('')
   const [openBuyCryptoModal, setOpenBuyCryptoModal] = useState(false)
   const [fromToken, setFromToken] = useState('ETH')
-  const [toToken, setToToken] = useState('')
+  const [toToken, setToToken] = useState('Dai')
   const [amount, setAmount] = useState('')
 
   useEffect(() => {
